@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>The Ultimate Students Manager</title>
-        <link rel="icon" href="static\Picture\The Ultimate Students Manager icon.png">
-        <link rel="stylesheet" href="static\css\base.css">
-    </head>
-    <body>
-        <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="/task">Task</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/about">About</a></li>
-        </ul>
-          
-        <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-        </div>
-    </body>
-</html>
+{% extends 'bone.html' %}
+
+{% block nav %}
+<nav>
+    <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/task">Task</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</nav>
+{% endblock %}

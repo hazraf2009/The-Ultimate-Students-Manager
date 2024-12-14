@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>The Ultimate Students Manager</title>
-        <link rel="icon" href="static\Picture\The Ultimate Students Manager icon.png">
-        <link rel="stylesheet" href="static\css\base.css">
-    </head>
-    <body>
-        <p>about</p>
-    </body>
-</html>
+{% extends 'bone.html' %}
+
+{% block nav %}
+<nav>
+    <ul>
+        <li><a href="/" >Home</a></li>
+        <li><a href="/task" >Task</a></li>
+        <li><a href="/contact" >Contact</a></li>
+        <li><a href="/about" class="active">About</a></li>
+    </ul>
+</nav>
+{% endblock %}

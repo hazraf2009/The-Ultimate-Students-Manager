@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: black;
+    color: #ffffff;
   }
   
   ul {
@@ -22,7 +23,7 @@ body {
   }
   
   li a.active {
-    background-color: #ff0000;
+    background-color: #860000;
     color: white;
   }
   
@@ -30,3 +31,49 @@ body {
     background-color: #dc0058;
     color: white;
   }
+
+  table {
+    background-color: #434242;
+    border-collapse: collapse;
+    width: 100%;
+    color: #ffffff;
+  }
+  
+  th {
+    border: 1px solid #ffffff;
+  }
+  
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ffffff;
+  }
+
+ td a:link, td a:visited {
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+
+.add-container {
+  text-align: center; 
+  margin: 20px 0; 
+}
+
+.add {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color:white;
+  background-color: blue;
+  padding: 10px 0; /* Padding atas dan bawah agar terlihat seperti tombol */
+  width: 100%; /* Tombol selebar halaman */
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+}
+
+input {
+  width: 100%;
+}
