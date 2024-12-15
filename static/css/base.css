@@ -1,80 +1,76 @@
 body {
-    margin: 0;
-    background-color: black;
-    color: #ffffff;
-  }
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: #434242;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-  }
-  
-  li a {
-    display: block;
-    color: #ffffff;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-  
-  li a.active {
-    background-color: #860000;
-    color: white;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #dc0058;
-    color: white;
-  }
+  margin: 0;
+  background-color: black;
+  color: #ffffff;
+}
 
-  table {
-    background-color: #434242;
-    border-collapse: collapse;
-    width: 100%;
-    color: #ffffff;
-  }
-  
-  th {
-    border: 1px solid #ffffff;
-  }
-  
-  td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ffffff;
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #434242;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
 
- td a:link, td a:visited {
-    color: white;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
+li a {
+  display: block;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
 
+li a.active {
+  background-color: #860000;
+  color: white;
+}
 
+li a:hover:not(.active) {
+  background-color: #dc0058;
+  color: white;
+}
+
+table {
+  background-color: #434242;
+  border-collapse: collapse;
+  width: 100%;
+  color: #ffffff;
+}
+
+th {
+  border: 1px solid #ffffff;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+}
+
+td a:link,
+td a:visited {
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Add Button Styling */
 .add-container {
-  text-align: center; 
-  margin: 20px 0; 
+  text-align: center;
+  margin: 20px 0;
 }
 
 .add {
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  color:white;
+  color: white;
   background-color: blue;
-  padding: 10px 0; /* Padding atas dan bawah agar terlihat seperti tombol */
-  width: 100%; /* Tombol selebar halaman */
-  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
-}
-
-input {
+  padding: 10px 0;
   width: 100%;
 }
 
@@ -95,4 +91,10 @@ input {
 
 .pagination span {
   margin: 0 10px;
+}
+
+.panjang {
+  word-wrap: break-word;
+  white-space: normal; 
+  overflow-wrap: anywhere;
 }

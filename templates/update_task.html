@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='Picture/The Ultimate Students Manager icon.png') }}">
     <title>The Ultimate Students Manager</title>
 </head>
 <body>
-    <form action="/update/{{ task.id }}" method="POST">
-        <h2>Update Task</h2>
+    <div class="login-container">
+        <form action="/update/{{ task.id }}" method="POST" class="login">
+            <h2>Update Task</h2>
 
-        <label for="content">Nama Tugas</label>
-        <input type="text" name="nama" id="nama" placeholder="Task name required" value="{{ task.isi }}" required>
-        <label for="dead">Tanggal Deadline</label>
-        <input type="datetime-local" name="dead" id="dead" value="{{ task.deadline }}" required>
-        <button type="submit">Update Task</button>
-    </form>
+            <label for="content">Nama Tugas</label>
+            <input type="text" name="nama" id="nama" placeholder="Task name required" value="{{ task.isi }}" required class="panjang">
+            <label for="dead">Tanggal Deadline</label>
+            <input type="datetime-local" name="dead" id="dead" value="{{ task.deadline }}" required>
+            <button type="submit">Update Task</button>
+        </form>
+    </div>
 </body>
 </html>
