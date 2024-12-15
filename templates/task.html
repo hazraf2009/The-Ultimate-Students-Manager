@@ -3,39 +3,60 @@
 {% block nav %}
 <nav>
     <ul>
-        <li><a href="/" >Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/task" class="active">Task</a></li>
-        <li><a href="/contact" >Contact</a></li>
-        <li><a href="/about" >About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/about">About</a></li>
     </ul>
 </nav>
 {% endblock %}
 
 {% block body %}
-<h1 style="text-align: center;">Your Task</h1>
+<main>
+    <h1 style="text-align: center;">Your Task</h1>
 
-<div class="add-container"><a href="{{ url_for('create') }}" class="add">+Add Task</a></div>
+    <div class="add-container">
+        <a href="{{ url_for('create') }}" class="add">+Add Task</a>
+    </div>
 
-{% if tasks|length < 1 %}
-<h4 style="text-align: center;">Belum ada Tugas, buat tugasmu diatas!</h4>
-
-{% else %}
-<table>
-    <tr>
-        <th width="30%">Task</th>
-        <th width="30%">Date Created</th>
-        <th width="30%">Deadline</th>
-        <th colspan="2" width="10%">Action</th>
-    </tr>
-    {% for task in tasks %}
+    {% if tasks.items|length == 0 %}
+    <h4 style="text-align: center;">Belum ada Tugas, buat tugasmu diatas!</h4>
+    {% else %}
+    <table>
         <tr>
-            <td style="text-align: left; word-wrap: break-word;">{{ task.isi }}</td>
-            <td style="text-align: center;">{{ task.date_created.date() }}</td>
-            <td style="text-align: center;">{{ task.deadline }}</td>
-            <td><a href="" style="background-color: green;">Update</a></td>
-            <td><a href="/delete/{{ task.id }}" style="background-color: red;">Remove</a></td>
+            <th width="30%">Task</th>
+            <th width="30%">Date Created</th>
+            <th width="30%">Deadline</th>
+            <th colspan="2" width="10%">Action</th>
         </tr>
-    {% endfor %}
-</table>
-{% endif %}
+        {% for task in tasks.items %}
+            <tr>
+                <td style="text-align: left; word-wrap: break-word;">{{ task.isi }}</td>
+                <td style="text-align: center;">{{ task.date_created.date() }}</td>
+                <td style="text-align: center;">{{ task.deadline }}</td>
+                <td>
+                    <a href="/update/{{ task.id }}" style="background-color: green;">Update</a>
+                </td>
+                <td>
+                    <a href="/delete/{{ task.id }}" style="background-color: red;">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</main>
+
+<footer>
+    <div class="pagination">
+        {% if tasks.has_prev %}
+        <a href="{{ url_for('Task', page=tasks.prev_num) }}">Previous</a>
+        {% endif %}
+
+        <span>Page {{ tasks.page }} of {{ tasks.pages }}</span>
+
+        {% if tasks.has_next %}
+        <a href="{{ url_for('Task', page=tasks.next_num) }}">Next</a>
+        {% endif %}
+    </div>
+</footer>
 {% endblock %}

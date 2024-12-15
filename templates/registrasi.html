@@ -8,15 +8,14 @@
     <title>The Ultimate Students Manager</title>
 </head>
 <body>
-    <form action="{{ url_for('form_create') }}" method="POST">
-        <h2>Add New Task</h2>
+    <form action="{{ url_for('reg') }}" method="POST">
+        <h2>Login</h2>
 
-        <label for="content">Nama Tugas</label>
-        <input type="text" name="nama" id="nama" placeholder="Task name required" required>
-        <label for="dead">Tanggal Deadline</label>
-        <input type="datetime-local" name="dead" id="dead" required>
-        <button type="submit">Add Task</button>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+        <label for="dead">Password</label>
+        <input type="password" name="pass" id="pass" placeholder="Password" required>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
-

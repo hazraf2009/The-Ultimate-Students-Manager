@@ -27,13 +27,14 @@ class User(db.Model):
     def __repr__(self):
         return f'<User {self.id}>'
 
-@app.route('/')
+@app.route('/index')
 def home():
     return render_template('index.html')
 
 @app.route('/task')
 def Task():
-    tasks = Tugas.query.order_by(Tugas.date_created).all()
+    page = request.args.get('page', 1, type=int)
+    tasks = Tugas.query.order_by(Tugas.date_created).paginate(page=page, per_page=5)
     return render_template('task.html', tasks=tasks)
 
 @app.route('/about')
@@ -80,6 +81,58 @@ def delete(id):
     except:
         return 'error'
 
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    task = Tugas.query.get_or_404(id)
+    if request.method == 'POST':
+        task.isi= request.form['nama']
+        task.deadline = request.form['dead']
+
+        task.deadline = datetime.strptime(task.deadline, '%Y-%m-%dT%H:%M')
+        try:
+            db.session.commit()
+            return redirect('/task')
+        except:
+            return 'error'
+
+    else:
+        return render_template('update_task.html', task=task)
+    
+
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['pass']
+
+        # Query for a user with matching login and password
+        user = User.query.filter_by(login=email, password=password).first()
+
+        if user:
+            return redirect('/index')
+        else:
+            error = 'Login atau kata sandi tidak tepat'
+            return render_template('login.html', error=error)
+    else:
+        return render_template('login.html')
+    
+@app.route('/reg', methods=['GET', 'POST'])
+def reg():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['pass']
+
+        regis = User(login=email, password=password)
+
+        try:
+            db.session.add(regis)
+            db.session.commit()
+            return render_template('login.html')
+        except:
+            return 'error'
+    else:
+        return render_template('registrasi.html')
+        
 if __name__ == '__main__':
     app.run(debug=True)
 
