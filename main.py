@@ -35,7 +35,7 @@ def home():
 def Task():
     page = request.args.get('page', 1, type=int)
     tasks = Tugas.query.order_by(Tugas.date_created).paginate(page=page, per_page=5)
-    return render_template('task.html', tasks=tasks)
+    return render_template('Task.html', tasks=tasks)
 
 @app.route('/about')
 def about():
