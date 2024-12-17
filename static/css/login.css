@@ -1,8 +1,8 @@
 /* Global Styling */
 body {
     margin: 0;
-    background-color: black;
-    color: #ffffff;
+    background-color: #1a1a1a; /* Hitam keabuan */
+    color: #ffffff; /* Putih */
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     display: flex;
@@ -11,162 +11,65 @@ body {
     height: 100vh;          /* Tinggi penuh layar */
 }
 
-/* Sidebar */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: #434242;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-}
-
-li a {
-    display: block;
-    color: #ffffff;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-li a.active {
-    background-color: #860000;
-    color: white;
-}
-
-li a:hover:not(.active) {
-    background-color: #dc0058;
-    color: white;
-}
-
-/* Table Styling */
-table {
-    background-color: #434242;
-    border-collapse: collapse;
-    width: 100%;
-    color: #ffffff;
-}
-
-th {
-    border: 1px solid #ffffff;
-}
-
-td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ffffff;
-}
-
-td a:link,
-td a:visited {
-    color: white;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-/* Add Button Styling */
-.add-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.add {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    color: white;
-    background-color: blue;
-    padding: 10px 0;
-    width: 100%;
-}
-
-/* Pagination Styling */
-.pagination {
-    text-align: center;
-    margin-top: 20px;
-    float: bottom;
-}
-
-.pagination a {
-    margin: 0 10px;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: white;
-    background-color: blue;
-    border-radius: 5px;
-}
-
-.pagination span {
-    margin: 0 10px;
-}
-
 /* Login Form Styling */
 .login-container {
-    width: 300px;
-    background-color: #434242;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #860000;
+    width: 400px;
+    background-color: transparent;
+    padding: 30px;
     text-align: center;
 }
 
 h2 {
-    margin-bottom: 20px;
-    color: #dc0058;
-    text-shadow: 1px 1px 3px #860000;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #3498db;
 }
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    margin: 10px 0 5px; /* Kurangi jarak antar label dan input */
     text-align: left;
-    color: #dc0058;
+    font-size: 1.2rem;
+    color: #ffffff;
 }
 
 input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    background-color: #2e2e2e;
-    border: 2px solid #860000;
+    padding: 15px;
+    margin-bottom: 10px; /* Kurangi jarak antar input */
+    background-color: #2c3e50;
+    border: none;
     border-radius: 5px;
     color: white;
+    font-size: 1rem;
     box-sizing: border-box;
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #dc0058;
+    padding: 15px;
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #860000;
+    background-color: #2980b9;
     transform: scale(1.05);
 }
 
 a {
     display: block;
-    margin-top: 10px;
-    color: #dc0058;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #3498db;
     text-decoration: none;
 }
 
 a:hover {
-    color: #860000;
+    color: #2980b9;
 }
-
-p {
-    margin-top: 10px;
-    color: red;
-}
-  
