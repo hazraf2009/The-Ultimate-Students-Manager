@@ -132,7 +132,7 @@ def reg():
             return 'error'
     else:
         return render_template('registrasi.html')
-        
+         
 if __name__ == '__main__':
     app.run(debug=True)
 

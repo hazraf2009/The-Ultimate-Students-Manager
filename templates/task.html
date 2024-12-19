@@ -15,10 +15,12 @@
 <main>
     <h1 style="text-align: center;">Your Task</h1>
 
-    <div class="add-container">
-        <a href="{{ url_for('create') }}" class="add">+Add Task</a>
+    <div class="task-container" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+        <!-- Add Task Button -->
+        <a href="{{ url_for('create') }}" id="add-task-btn" class="add">+Add Task</a>
     </div>
-
+    
+    
     {% if tasks.items|length == 0 %}
     <h4 style="text-align: center;"><pre>
 "Tunggu... apa kamu serius sudah selesai? 

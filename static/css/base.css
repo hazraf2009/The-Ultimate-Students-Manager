@@ -84,6 +84,10 @@ main {
   align-items: center;
 }
 
+.gallery-item:hover {
+  transform: scale(102.5%);
+}
+
 .icon {
   font-size: 3em;
   color: white;
@@ -158,6 +162,7 @@ td a:hover {
 
 .add:hover {
   background-color: #2980b9; /* Biru gelap */
+  transform: scale(102.5%);
 }
 
 header {
@@ -233,4 +238,10 @@ header p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #1f2a35; /* Biru lebih terang saat dihover */
+}
+.task-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
 }
